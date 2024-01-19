@@ -5,7 +5,7 @@ library(stringr)
 library(arulesSequences)
 
 # Load the df data, download manually if the file becomes corrupted during download
-df <- read.csv(file = "C://Users//jefit//Documents//KULIAH//1TA//nyoba MBA//MO2022.csv", sep = ";")
+df <- read.csv(file = "C://Users//...//MO2022.csv", sep = ";")
 View(df)
 
 # Add items together by type pukulam
@@ -14,7 +14,7 @@ df <- df %>%
   group_by(rally, Banyak.pukulan) %>% 
   summarise(items = paste(type, collapse = " "))
 
-# Hitung jumlah item pada setiap Banyak.pukulan
+# Hitung jumlah item pada setiap Banyak pukulan
 # akan bertambah kolom size
 df$SIZE <- str_count(df$items, " ") + 1
 df <- as.data.frame(df)
@@ -55,5 +55,5 @@ baru <-as(baru,"data.frame")
 View(baru)
 
 # simpan dalam csv
-write.csv(x=baru, file="C://Users//jefit//Documents//KULIAH//1TA//nyoba MBA//hasilMO2022.csv", row.names=FALSE)
+write.csv(x=baru, file="C://Users//...//hasilMO2022.csv", row.names=FALSE)
 
